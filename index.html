@@ -7,28 +7,43 @@
     <title>Motivational Pokemon</title>
   </head>
   <body>
-    <header>
-      <h1>Motivational Pokemon</h1>
-    </header>
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter the name of a Pokemon"
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-      <div>Motivational quote will go here</div>
-    </main>
-    <footer>
-      Coded by Jordan Goldtooth, is open-sourced on
-      <a href="https://github.com/jordnlnn/motivational-pokemon">GitHub</a>, and
-      is hosted on
-      <a href="https://motivational-pokemon.netlify.app/">Netlify</a>.
-    </footer>
+    <div class="container">
+      <header>
+        <h1>Motivational Pokemon Quote Generator</h1>
+      </header>
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter the name of a Pokemon"
+            autofocus
+            required
+            autocomplete="off"
+            class="pokemon-input"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="pokemon-and-quote-container">
+          <div class="quote-container">
+            "Even when you're still, you're recharging for greatness. Rest isn't
+            weakness - Snorlax knows it's a power move!"
+          </div>
+          <div class="pokemon-container">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
+              alt="Pikachu"
+              height="250"
+            />
+          </div>
+        </div>
+      </main>
+      <footer>
+        Coded by Jordan Goldtooth, is open-sourced on
+        <a href="https://github.com/jordnlnn/motivational-pokemon">GitHub</a>,
+        and is hosted on
+        <a href="https://motivational-pokemon.netlify.app/">Netlify</a>.
+      </footer>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>
