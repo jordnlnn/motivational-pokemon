@@ -5,19 +5,35 @@
 }
 
 a {
-    color: #3b4cca;
+    color: #FFCB05;
+}
+.background-layer {
+    background-image: url("../images/pokemonBackground-cropped.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 body {
     font-family: "VT323", monospace;
-    /*overflow: hidden;*/
     margin: 0;
     color: #333333;
-    background-color: #f7f7f7;
+    overflow: hidden;
+    /*background-color: green;
+    background-image: url("../images/pokemonBackground-cropped.png");
+    background-repeat: no-repeat;
+    background-size: 1800px;
+    background-position: bottom;*/
 }
 
 .container {
-    margin: 80px auto;
+    margin: 50px auto 0px;
     max-width: 600px;
 }
 
@@ -28,17 +44,36 @@ header {
 h1 {
     text-align: center;
     font-weight: 800;
-    font-size: 32px;
+    font-size: 38px;
     line-height: 1.5;
+    color: #ffffff;
+        font-weight: bold;
+        text-shadow:
+            2px 2px 0 #FFCB05,
+            4px 4px 0 #FFCB05,
+            4px 4px 0 #FFCB05;
+            text-transform: uppercase;
+
 }
 
-form {
+.form-container {
     padding: 30px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 20px 60px rgba(0,0,0,0.08);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+    margin-bottom: 150px;
+}
+
+.hint {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #5a5a5a;
+    letter-spacing: 1px;
+}
+
+form {
     display: flex;
-    margin-bottom: 30px;
 }
 
 .pokemon-input {
@@ -50,6 +85,7 @@ form {
     line-height: 20px;
     color: #1e1e1e;
     font-family: inherit;
+    background-color: #f7f7f7;
 }
 
 .submit-button {
@@ -68,30 +104,53 @@ form {
 }
 
 .pokemon-and-quote-container {
+    /*background-image: url("../images/pokemonBackground.png");
+    background-size: contain;
+    background-position: bottom;*/
     display: none;
     grid-template-columns: 1fr 1fr;
-    padding: 20px;
-    background-color: #ffffff;
+    padding: 0px;
+    /*background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);*/
     margin-bottom: 30px;
 }
 
 .quote-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     font-size: 18px;
-    padding-left: 30px;
+    line-height: 1.2;
+}
+span.Typewriter__wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.pokemon-container img {
+span.Typerwriter__cursor {
+    display: none;
+}
+
+.pokemon-container img{
     display: block;
     margin-left: auto;
+    animation: fadeIn 5s;
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
 }
 
 footer {
     font-size: 12px;
     text-align: center;
-    margin-top: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5ca241;
+    padding: 10px;
 }

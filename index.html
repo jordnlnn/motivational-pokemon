@@ -9,11 +9,13 @@
     <title>Motivational Pokemon</title>
   </head>
   <body>
+    <div class="background-layer"></div>
     <div class="container">
       <header>
         <h1>Motivational Pokemon Quote Generator</h1>
       </header>
       <main>
+        <div class="form-container">
         <form id="quote-generator-form">
           <input
             type="text"
@@ -24,19 +26,24 @@
             class="pokemon-input"
             id="user-input"
           />
-          <input type="submit" class="submit-button" />
+          <input type="submit" class="submit-button" value="submit" />
         </form>
+        <div class="hint">i.e. Pikachu, Snorlax, Jigglypuff</div>
+        </div>
+        
         <div class="pokemon-and-quote-container">
           <div class="quote-container" id="quote"></div>
-        <img src="" height="300" class="pokemon-image"/>
+          <div class="pokemon-container">
+            <img src="" height="300" class="pokemon-image"/>
+        </div>
           </div>
         </div>
       </main>
       <footer>
         Coded by Jordan Goldtooth, is open-sourced on
-        <a href="https://github.com/jordnlnn/motivational-pokemon">GitHub</a>,
+        <a href="https://github.com/jordnlnn/motivational-pokemon" target="_blank">GitHub</a>,
         and is hosted on
-        <a href="https://motivational-pokemon.netlify.app/">Netlify</a>.
+        <a href="https://motivational-pokemon.netlify.app/" target="_blank">Netlify</a>.
       </footer>
     </div>
     <script src="src/script.js"></script>

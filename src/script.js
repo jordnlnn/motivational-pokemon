@@ -8,7 +8,7 @@ function displayPokeQuote(response) {
     //TYPEWRITER EFFECT FOR QUOTE
     new Typewriter('#quote', {
         strings: response.data.answer,
-        autoStart: true, delay: 2
+        autoStart: true, delay: 2, cursor: ""
     });
 }
 
@@ -34,7 +34,7 @@ function generateQuote(event) {
     let aiApiKey = "df0267tdf4o3bfae34b454fb00b472a9";
     let userPrompt = `Pretend you are ${userPokemon} and generate a motivational quote as this Pokemon`;
     console.log(userPrompt);
-    let context = `Keep response between 3 to 4 sentences`;
+    let context = `Keep response between 3 to 4 sentences and under 200 characters`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${userPrompt}&context=${context}&key=${aiApiKey}`;
 
     axios.get(apiUrl).then(displayPokeQuote);
