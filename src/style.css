@@ -116,6 +116,69 @@ form {
     margin-bottom: 30px;
 }
 
+.loading-animation {
+    display: none;
+    font-family: inherit;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.loading-animation span {
+    animation: bounce 1s infinite;
+    display: inline-block;
+}
+
+.loading-animation span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading-animation span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loading-animation span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.loading-animation span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.loading-animation span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.loading-animation span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.loading-animation span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.loading-animation span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+.loading-animation span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 .quote-container {
     display: flex;
     justify-content: start;

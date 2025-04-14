@@ -10,35 +10,41 @@ function displayPokeQuote(response) {
         strings: response.data.answer,
         autoStart: true, delay: 2, cursor: ""
     });
+    document.querySelector("#loading").style.display = "none";
 }
 
 function generateQuote(event) {
     //PREVENTS FORM SUBMISSION
     event.preventDefault();
+
+      document.querySelector("#loading").style.display = "block";
+
+    //CLEAR PREVIOUS IMAGE & QUOTE
+    pokemonImg.src = "";
+    document.querySelector("#quote").innerHTML = "";
+
     //USER INPUT
     let userPokemon = userInput.value.trim().toLowerCase();
+
     //BUILD POKEMON URL
     let pokemonApiUrl = `https://pokeapi.co/api/v2/pokemon/${userPokemon}`;
-    console.log("User typed:", userPokemon);
-
 
     axios.get(pokemonApiUrl).then(function (response) {
     let spriteUrl = response.data.sprites.front_default;
     console.log("Sprite URL:", spriteUrl);
     pokemonImg.src = spriteUrl;
-    //let pokemonImg = `<img src="${spriteUrl}" height="300" />`;
-    
-    //quoteContainer.insertAdjacentHTML("afterend", pokemonImg);
     });
 
+    //BUILD SHECODES AI API
     let aiApiKey = "df0267tdf4o3bfae34b454fb00b472a9";
     let userPrompt = `Pretend you are ${userPokemon} and generate a motivational quote as this Pokemon`;
-    console.log(userPrompt);
     let context = `Keep response between 3 to 4 sentences and under 200 characters`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${userPrompt}&context=${context}&key=${aiApiKey}`;
 
+    //RUNS DISPLAY FUNCTION
     axios.get(apiUrl).then(displayPokeQuote);
 
+    //MAKES CONTAINER VISIBLE
     pokeQuoteContainer.style.display = "grid"; 
 }
 
