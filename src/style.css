@@ -10,7 +10,7 @@ a {
 
 body {
     font-family: "VT323", monospace;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0;
     color: #333333;
     background-color: #f7f7f7;
@@ -68,7 +68,7 @@ form {
 }
 
 .pokemon-and-quote-container {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
     background-color: #ffffff;
