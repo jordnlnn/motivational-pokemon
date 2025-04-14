@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>Motivational Pokemon</title>
   </head>
   <body>
@@ -12,7 +14,7 @@
         <h1>Motivational Pokemon Quote Generator</h1>
       </header>
       <main>
-        <form>
+        <form id="quote-generator-form">
           <input
             type="text"
             placeholder="Enter the name of a Pokemon"
@@ -20,20 +22,12 @@
             required
             autocomplete="off"
             class="pokemon-input"
+            id="user-input"
           />
           <input type="submit" class="submit-button" />
         </form>
         <div class="pokemon-and-quote-container">
-          <div class="quote-container">
-            "Even when you're still, you're recharging for greatness. Rest isn't
-            weakness - Snorlax knows it's a power move!"
-          </div>
-          <div class="pokemon-container">
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
-              alt="Pikachu"
-              height="250"
-            />
+          <div class="quote-container" id="quote"></div>
           </div>
         </div>
       </main>
