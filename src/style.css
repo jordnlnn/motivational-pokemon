@@ -204,10 +204,11 @@ form {
 .quote-container {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     font-size: 18px;
     line-height: 1.2;
 }
+
 span.Typewriter__wrapper {
     background-color: #ffffff;
     padding: 20px;
@@ -218,11 +219,22 @@ span.Typerwriter__cursor {
     display: none;
 }
 
-.pokemon-container img{
+.pokemon-container img {
     display: block;
     margin-left: auto;
-    animation: fadeIn 1s ease-in-out;
+}
+
+.pokemon-image {
+    width: 100%;
+    max-width: 300px;
+    animation: fadeIn 2s ease-in-out;
     image-rendering: pixelated;
+}
+
+.pokemon-says {
+    color: #2a36a2;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 footer {
@@ -234,4 +246,17 @@ footer {
     width: 100%;
     background-color: #5ca241;
     padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .pokemon-and-quote-container {
+        grid-template-columns: 1fr;
+        position: fixed;
+        bottom: 50px;
+        left: 25%;
+        max-width: 400px;
+    }
+    .form-container {
+         margin-bottom: 50px;
+    }
 }
