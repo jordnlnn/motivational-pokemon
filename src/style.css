@@ -3,6 +3,27 @@
 * {
     box-sizing: border-box;
 }
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+ @keyframes fadeIn {
+     0% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
 
 a {
     color: #FFCB05;
@@ -103,27 +124,40 @@ form {
     font-weight: bolder;
 }
 
+.not-found-error {
+    display: none;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    text-align: center;
+    font-size: 18px;
+} 
+
 .pokemon-and-quote-container {
-    /*background-image: url("../images/pokemonBackground.png");
-    background-size: contain;
-    background-position: bottom;*/
     display: none;
     grid-template-columns: 1fr 1fr;
     padding: 0px;
-    /*background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);*/
     margin-bottom: 30px;
 }
 
 .loading-animation {
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     font-family: inherit;
     color: #ffffff;
-    text-align: center;
-    margin: 20px auto;
-    font-size: 24px;
+    font-size: 40px;
+    font-weight: bolder;
     letter-spacing: 3px;
+    pointer-events: none;
 }
 
 .loading-animation span {
@@ -167,18 +201,6 @@ form {
     animation-delay: 0.9s;
 }
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
 .quote-container {
     display: flex;
     justify-content: start;
@@ -199,16 +221,12 @@ span.Typerwriter__cursor {
 .pokemon-container img{
     display: block;
     margin-left: auto;
-    animation: fadeIn 5s;
-
-    @keyframes fadeIn {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-    }
+    animation: fadeIn 1s ease-in-out;
+    image-rendering: pixelated;
 }
 
 footer {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: fixed;
     bottom: 0;

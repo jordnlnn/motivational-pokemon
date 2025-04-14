@@ -3,6 +3,9 @@ let quoteContainer = document.querySelector(".quote-container");
 let userInput =document.querySelector("#user-input");
 let pokeQuoteContainer = document.querySelector(".pokemon-and-quote-container");
 let pokemonImg = document.querySelector(".pokemon-image");
+let loader = document.querySelector("#loading");
+let pokemonNotFound = document.querySelector(".not-found-error");
+let quote = document.querySelector("#quote");
 
 function displayPokeQuote(response) {
     //TYPEWRITER EFFECT FOR QUOTE
@@ -10,30 +13,44 @@ function displayPokeQuote(response) {
         strings: response.data.answer,
         autoStart: true, delay: 2, cursor: ""
     });
-    document.querySelector("#loading").style.display = "none";
+    loader.style.display = "none";
 }
+
+ function showError() {
+        pokemonImg.src = ""; 
+        quote.innerHTML = "";
+        pokemonNotFound.style.display = "block";
+        pokeQuoteContainer.style.display = "none";
+    }
 
 function generateQuote(event) {
     //PREVENTS FORM SUBMISSION
     event.preventDefault();
 
-      document.querySelector("#loading").style.display = "block";
-
-    //CLEAR PREVIOUS IMAGE & QUOTE
+    //RESET STATES
+    loader.style.display = "block";
     pokemonImg.src = "";
-    document.querySelector("#quote").innerHTML = "";
+    quote.innerHTML = "";
+    pokeQuoteContainer.style.display = "none";
+    pokemonNotFound.style.display = "none";
 
     //USER INPUT
     let userPokemon = userInput.value.trim().toLowerCase();
 
-    //BUILD POKEMON URL
+    //POKEMON URL
     let pokemonApiUrl = `https://pokeapi.co/api/v2/pokemon/${userPokemon}`;
 
-    axios.get(pokemonApiUrl).then(function (response) {
+    //validate pokemon first
+    axios.get(pokemonApiUrl).then((response) => {
     let spriteUrl = response.data.sprites.front_default;
-    console.log("Sprite URL:", spriteUrl);
+    
+    //LOADS/FADES IMAGE
+    pokemonImg.classList.remove("fade-in");
+    pokemonImg.onload = function () {
+    pokemonImg.classList.add("fade-in");
+    }
     pokemonImg.src = spriteUrl;
-    });
+
 
     //BUILD SHECODES AI API
     let aiApiKey = "df0267tdf4o3bfae34b454fb00b472a9";
@@ -46,6 +63,12 @@ function generateQuote(event) {
 
     //MAKES CONTAINER VISIBLE
     pokeQuoteContainer.style.display = "grid"; 
+
+    }).catch(() => {
+    loader.style.display = "none";
+    showError();
+  });
+    
 }
 
 //SUBMIT FORM BUTTON
