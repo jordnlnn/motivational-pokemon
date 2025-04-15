@@ -295,6 +295,8 @@ footer {
         display: block;
     }
 
+
+
     .form-container {
         margin-bottom: 50px;
     }
@@ -331,16 +333,28 @@ footer {
         margin-bottom: -40px;
     }
 
-        .loading-animation {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            font-family: inherit;
-            color: #ffffff;
-            font-size: 30px;
-            font-weight: bolder;
-            letter-spacing: 3px;
-            pointer-events: none;
-        }
+    .loading-animation {
+        position: relative;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .not-found-error {
+        position: relative;
+        width: 400px;
+    }
+
+    .form-container {
+        padding: 20px 20px 10px 20px;
+    }
+
+    .background-layer {
+        background-position: center 85%;    
+    }
+
+    .container {
+        min-height: 90vh;
+    }
+
 }
