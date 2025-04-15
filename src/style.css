@@ -28,6 +28,7 @@
 a {
     color: #FFCB05;
 }
+
 .background-layer {
     background-image: url("../images/pokemonBackground-cropped.png");
     background-size: cover;
@@ -41,21 +42,27 @@ a {
     z-index: -1;
 }
 
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "VT323", monospace;
-    margin: 0;
     color: #333333;
     overflow: hidden;
-    /*background-color: green;
-    background-image: url("../images/pokemonBackground-cropped.png");
-    background-repeat: no-repeat;
-    background-size: 1800px;
-    background-position: bottom;*/
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    margin: 50px auto 0px;
+    min-height: 100vh;
     max-width: 600px;
+    margin: 50px auto 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -68,13 +75,12 @@ h1 {
     font-size: 38px;
     line-height: 1.5;
     color: #ffffff;
-        font-weight: bold;
-        text-shadow:
-            2px 2px 0 #FFCB05,
-            4px 4px 0 #FFCB05,
-            4px 4px 0 #FFCB05;
-            text-transform: uppercase;
-
+    font-weight: bold;
+    text-shadow:
+        2px 2px 0 #FFCB05,
+        4px 4px 0 #FFCB05,
+        4px 4px 0 #FFCB05;
+    text-transform: uppercase;
 }
 
 .form-container {
@@ -248,32 +254,46 @@ footer {
     padding: 10px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+    body {
+        overflow: visible;
+    }
     .pokemon-and-quote-container {
         grid-template-columns: 1fr;
-        bottom: 50px;
-        left: 25%;
-        max-width: 400px;
-    }
-    .form-container {
-         margin-bottom: 50px;
+        max-width: 100%;
     }
 
-        .pokemon-container img {
-            margin: auto;
-        }
+    .pokemon-container img {
+        margin: auto;
+    }
 
-
+    footer {
+        position: relative;
+    }
 }
 
 @media (max-width: 500px) {
     .container {
-        margin: 30px auto 0px;
+        margin-top: 0px;
         max-width: 400px;
+    }
+
+    header {
+        margin-bottom: 0px;
+    }
+    
+    h1 {
+        line-height: 1;
+        font-size: 40px;
+        margin-top: 50px;
     }
 
     form {
         display: block;
+    }
+
+    .form-container {
+        margin-bottom: 80px;
     }
 
     .pokemon-input {
@@ -292,11 +312,22 @@ footer {
         text-align: center;
     }
 
-       
-        .pokemon-image {
-            width: 100%;
-            max-width: 350px;
-            animation: fadeIn 2s ease-in-out;
-            image-rendering: pixelated;
+    .pokemon-image {
+        width: 100%;
+        max-width: 350px;
+        animation: fadeIn 5s ease-in-out;
+        animation-delay: 3s;
+        animation-fill-mode: both;
+    }
+
+    .pokemon-and-quote-container {
+        justify-content: end;
+    }
+
+        span.Typewriter__wrapper {
+           margin-bottom: -40px;
+        }
+        footer {
+            position:fixed;
         }
 }
