@@ -331,9 +331,9 @@ a {
     }
 
     .pokemon-and-quote-container {
+        position: static;
         grid-template-columns: 1fr;
         max-width: 400px;
-        height: auto;
         bottom: 30px;
     }
 
@@ -341,4 +341,22 @@ a {
         margin-top: 0px;
     }
 
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        overflow: visible;
+    }
+
+    main {
+        max-width: 350px;
+    }
+
+    .form-container {
+        margin-bottom: 100px;
+    }
+
+    .pokemon-and-quote-container {
+        position: static;
+    }
 }
