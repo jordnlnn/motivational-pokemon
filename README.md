@@ -1,4 +1,4 @@
-## Motivational Pokémon
+# Motivational Pokémon
 
 **Motivational Pokémon** is a fun web app built for my final project from the [SheCodes Plus AI workshop](https://www.shecodes.io/graduates/17346-jordan-goldtooth). It combines the [PokeAPI](https://pokeapi.co/) with the [SheCodes AI API](https://www.shecodes.io/) to deliver motivational messages paired with your favorite Pokémon. Whether you're a Pokémon fan or just need a positive boost, this app has you covered!
 
